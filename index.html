@@ -30,7 +30,7 @@
   /* Freeze header row */
   #myTable thead th {
     position: sticky;
-    top: 50px;          /* offset so it sits below the frozen title */
+    top: 80px;          /* offset so it sits below the frozen title */
     background-color: #004080;
     color: white;
     z-index: 2;
@@ -71,8 +71,13 @@
   }
 </style>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
 <div class="table-title">
-  A Quick List Pokemon Romhack with non-Pokemon Fakemon
+  A Quick List Pokemon Romhacks with non-Pokemon Fakemon<br>
+    <button onclick="exportTableToXLSX('myTable', 'Romhacks')">
+    Export Table to Excel (.xlsx)
+    </button>
 </div>
 
 <table id="myTable">
@@ -104,8 +109,8 @@
             <td>Red (U)</td>
             <td>Progressing<br>2023/07/23</td>
             <td>Aichiya Sanae</td>
-            <td><a href="https://www.youtube.com/@AichiyaSanae">[YT]</a></td>
-            <td><a href="https://mega.nz/folder/P3p1SD7T#P0KvD3H-X-q6W4jTWtskhg/folder/jvIzCZgL">[MEGA]</a></td>
+            <td><a target="_blank" href="https://www.youtube.com/@AichiyaSanae">[YT]</a></td>
+            <td><a target="_blank" href="https://mega.nz/folder/P3p1SD7T#P0KvD3H-X-q6W4jTWtskhg/folder/jvIzCZgL">[MEGA]</a></td>
             <td>Binary</td>
             <td>Touhoumon 1.5x mechanics</td>
         </tr>
@@ -120,7 +125,7 @@
             <td>Finished<br>2016/10/26</td>
             <td>GeminiRage</td>
             <td>-</td>
-            <td><a href="https://www.mediafire.com/?fh6uybxft8di7kw">[MF]</a></td>
+            <td><a target="_blank" href="https://www.mediafire.com/?fh6uybxft8di7kw">[MF]</a></td>
             <td>Binary</td>
             <td>Touhoumon 1.5x mechanics</td>
         </tr>
@@ -134,9 +139,9 @@
             <td>Crystal (U)</td>
             <td>Progressing<br>2024/03/09</td>
             <td>DarkSlayer415</td>
-            <td><a href="https://discord.gg/FTHYG4Fky6">[Dev Discord]</a></td>
-            <td><a href="https://mega.nz/folder/AqlH2aQS#Rufncga-UVLAt-6HCO4uvQ">[MEGA]</a></td>
-            <td>Decomp<br><a href="https://github.com/DarkSlayer415/touhoumon_ordinary_redux_16">[Git Repo]</a></td>
+            <td><a target="_blank" href="https://discord.gg/FTHYG4Fky6">[Dev Discord]</a></td>
+            <td><a target="_blank" href="https://mega.nz/folder/AqlH2aQS#Rufncga-UVLAt-6HCO4uvQ">[MEGA]</a></td>
+            <td>Decomp<br><a target="_blank" href="https://github.com/DarkSlayer415/touhoumon_ordinary_redux_16">[Git Repo]</a></td>
             <td>Remake/improvement of Touhoumon Ordinary</td>
         </tr>
         <tr>
@@ -149,9 +154,9 @@
             <td>Crystal (U)</td>
             <td>Progressing<br>TBA</td>
             <td>Aichiya Sanae</td>
-            <td><a href="https://www.youtube.com/@AichiyaSanae">[YT]</a></td>
+            <td><a target="_blank" href="https://www.youtube.com/@AichiyaSanae">[YT]</a></td>
             <td>TBA</td>
-            <td>Decomp<br><a href="https://github.com/aichiya/thppredtro2">[Git Repo]</a></td>
+            <td>Decomp<br><a target="_blank" href="https://github.com/aichiya/thppredtro2">[Git Repo]</a></td>
             <td>Touhoumon 1.5x mechanics</td>
         </tr>
         <tr>
@@ -164,9 +169,9 @@
             <td>Crystal (U)</td>
             <td>Progressing<br>2025/11/12</td>
             <td>Joururichan</td>
-            <td><a href="https://discord.gg/ZyhuxQ3jDn">[Dev Discord]</a></td>
-            <td><a href="https://mega.nz/folder/Ty4VHBYR#xyqL8k_1CGWNJFhepXXJ4g">[MEGA]</a></td>
-            <td>Decomp<br><a href="https://github.com/JoururiChan/thmoncryspara">[Git Repo]</a></td>
+            <td><a target="_blank" href="https://discord.gg/ZyhuxQ3jDn">[Dev Discord]</a></td>
+            <td><a target="_blank" href="https://mega.nz/folder/Ty4VHBYR#xyqL8k_1CGWNJFhepXXJ4g">[MEGA]</a></td>
+            <td>Decomp<br><a target="_blank" href="https://github.com/JoururiChan/thmoncryspara">[Git Repo]</a></td>
             <td>Patch Insruction:<br>You can apply the provided patch to the Polished Crystal game version named 3.0.0 (not the beta, the plain number) which can be found on the Polished Crystal server/Polished Crystal GitHub page.</td>
         </tr>
         <tr>
@@ -179,8 +184,8 @@
             <td>Emerald (U)</td>
             <td>Finished<br>2012/01/31</td>
             <td>Aichiya Sanae</td>
-            <td><a href="https://www.youtube.com/@AichiyaSanae">[YT]</a></td>
-            <td><a href="https://mega.nz/folder/P3p1SD7T#P0KvD3H-X-q6W4jTWtskhg/folder/LjIl3BrZ">[MEGA]</a></td>
+            <td><a target="_blank" href="https://www.youtube.com/@AichiyaSanae">[YT]</a></td>
+            <td><a target="_blank" href="https://mega.nz/folder/P3p1SD7T#P0KvD3H-X-q6W4jTWtskhg/folder/LjIl3BrZ">[MEGA]</a></td>
             <td>Binary</td>
             <td>Touhoumon 1.5x mechanics</td>
         </tr>
@@ -194,8 +199,8 @@
             <td>Emerald (U)</td>
             <td>Halted<br>2022/07/25</td>
             <td>agsmgmaster64</td>
-            <td><a href="https://discord.gg/67zsEP9">[Dev Discord]</a><br><a href="https://www.youtube.com/@agsmgmaster64">[YT]</a></td>
-            <td><a href="https://mega.nz/file/mbZlQaCY#AJLV8wudT7ny_zSmXr-TfTh0pDn3Rq0EbCfKx92q2i0">[MEGA]</a></td>
+            <td><a target="_blank" href="https://discord.gg/67zsEP9">[Dev Discord]</a><br><a target="_blank" href="https://www.youtube.com/@agsmgmaster64">[YT]</a></td>
+            <td><a target="_blank" href="https://mega.nz/file/mbZlQaCY#AJLV8wudT7ny_zSmXr-TfTh0pDn3Rq0EbCfKx92q2i0">[MEGA]</a></td>
             <td>Binary</td>
             <td>Touhoumon 1.8x mechanics. Currenly is migrating to decomp version</td>
         </tr>
@@ -209,9 +214,9 @@
             <td>Emerald (U)</td>
             <td>Progressing</td>
             <td>agsmgmaster64</td>
-            <td><a href="https://discord.gg/67zsEP9">[Dev Discord]</a><br><a href="https://www.youtube.com/@agsmgmaster64">[YT]</a></td>
-            <td><a href="https://mega.nz/file/mbZlQaCY#AJLV8wudT7ny_zSmXr-TfTh0pDn3Rq0EbCfKx92q2i0">[MEGA]</a></td>
-            <td>Decomp<br><a href="https://github.com/agsmgmaster64/worldlinkdeluxe-amegigi">[Git Repo]</a></td>
+            <td><a target="_blank" href="https://discord.gg/67zsEP9">[Dev Discord]</a><br><a target="_blank" href="https://www.youtube.com/@agsmgmaster64">[YT]</a></td>
+            <td><a target="_blank" href="https://mega.nz/file/mbZlQaCY#AJLV8wudT7ny_zSmXr-TfTh0pDn3Rq0EbCfKx92q2i0">[MEGA]</a></td>
+            <td>Decomp<br><a target="_blank" href="https://github.com/agsmgmaster64/worldlinkdeluxe-amegigi">[Git Repo]</a></td>
             <td>Some Hololive characters will appear.</td>
         </tr>
         <tr>
@@ -224,8 +229,8 @@
             <td>Emerald (U)</td>
             <td>Progressing<br>2025/06/19</td>
             <td>BlueShell</td>
-            <td><a href="https://discord.gg/2uDesdbatF">[Dev Discord]</a><br><a href="https://www.youtube.com/@BluShell493">[YT]</a></td>
-            <td><a href="https://mega.nz/folder/XdoyxLxK#h_yndx33YL-26brcMK6MLA">[MEGA]</a></td>
+            <td><a target="_blank" href="https://discord.gg/2uDesdbatF">[Dev Discord]</a><br><a target="_blank" href="https://www.youtube.com/@BluShell493">[YT]</a></td>
+            <td><a target="_blank" href="https://mega.nz/folder/XdoyxLxK#h_yndx33YL-26brcMK6MLA">[MEGA]</a></td>
             <td>Binary</td>
             <td>Using custom mechanics. A lot of improvements of Touhoumon World Link.</td>
         </tr>
@@ -238,8 +243,8 @@
             <td>GBA</td>
             <td>Fire Red (U) v1.0</td>
             <td>Finished<br>2012/01/31</td>
-            <td>Aichiya Sanae</td><td><a href="https://www.youtube.com/@AichiyaSanae">[YT]</a></td>
-            <td><a href="https://mega.nz/folder/P3p1SD7T#P0KvD3H-X-q6W4jTWtskhg/folder/uiA1GDJC">[MEGA]</a></td>
+            <td>Aichiya Sanae</td><td><a target="_blank" href="https://www.youtube.com/@AichiyaSanae">[YT]</a></td>
+            <td><a target="_blank" href="https://mega.nz/folder/P3p1SD7T#P0KvD3H-X-q6W4jTWtskhg/folder/uiA1GDJC">[MEGA]</a></td>
             <td>Binary</td>
             <td>Touhoumon 1.5x mechanics.</td>
         </tr>
@@ -253,8 +258,8 @@
             <td>Fire Red (U) v1.0</td>
             <td>Abandoned?<br>2015/09/25</td>
             <td>machomuu</td>
-            <td><a href="https://www.pokecommunity.com/showthread.php?t=352590">[PC]</a></td>
-            <td><a href="https://www.dropbox.com/s/9c70avhng6b1efs/Another%20World%20Alpha%201%20V3.rar?dl=0">[DropBox]</a></td>
+            <td><a target="_blank" href="https://www.pokecommunity.com/showthread.php?t=352590">[PC]</a></td>
+            <td><a target="_blank" href="https://www.dropbox.com/s/9c70avhng6b1efs/Another%20World%20Alpha%201%20V3.rar?dl=0">[DropBox]</a></td>
             <td>Binary</td>
             <td>Improvement of Touhoumon Another World.</td>
         </tr>
@@ -268,8 +273,8 @@
             <td>Fire Red (U) v1.0</td>
             <td>Progressing<br>2023/08/16</td>
             <td>Zeta Sukuna</td>
-            <td><a href="https://www.pokecommunity.com/showthread.php?t=352590">[PC]</a></td>
-            <td><a href="https://www.mediafire.com/file/2tz9pt7awvuuxtb/Touhoumon_Another_World_%2528Retold%2529_-_Demo_1.0.6.rar/file">[MF]</a></td>
+            <td><a target="_blank" href="https://www.pokecommunity.com/showthread.php?t=352590">[PC]</a></td>
+            <td><a target="_blank" href="https://www.mediafire.com/file/2tz9pt7awvuuxtb/Touhoumon_Another_World_%2528Retold%2529_-_Demo_1.0.6.rar/file">[MF]</a></td>
             <td>Binary</td>
             <td>Improvement of Touhoumon Another World.</td>
         </tr>
@@ -283,8 +288,8 @@
             <td>FireRed (U) v1.0</td>
             <td>Progressing<br>2025/06/19</td>
             <td>BlueShell</td>
-            <td><a href="https://discord.gg/2uDesdbatF">[Dev Discord]</a><br><a href="https://www.youtube.com/@BluShell493">[YT]</a></td>
-            <td><a href="https://mega.nz/folder/XdoyxLxK#h_yndx33YL-26brcMK6MLA">[MEGA]</a></td>
+            <td><a target="_blank" href="https://discord.gg/2uDesdbatF">[Dev Discord]</a><br><a target="_blank" href="https://www.youtube.com/@BluShell493">[YT]</a></td>
+            <td><a target="_blank" href="https://mega.nz/folder/XdoyxLxK#h_yndx33YL-26brcMK6MLA">[MEGA]</a></td>
             <td>Binary</td>
             <td>Using custom mechanics. A lot of improvements of Touhoumon Another World.</td>
         </tr>
@@ -298,8 +303,8 @@
             <td>Ruby (U) v1.0</td>
             <td>Finished<br>2011/12/07</td>
             <td>Aichiya Sanae</td>
-            <td><a href="https://www.youtube.com/@AichiyaSanae">[YT]</a></td>
-            <td><a href="https://mega.nz/folder/P3p1SD7T#P0KvD3H-X-q6W4jTWtskhg/folder/y3I1hJiD">[MEGA]</a></td>
+            <td><a target="_blank" href="https://www.youtube.com/@AichiyaSanae">[YT]</a></td>
+            <td><a target="_blank" href="https://mega.nz/folder/P3p1SD7T#P0KvD3H-X-q6W4jTWtskhg/folder/y3I1hJiD">[MEGA]</a></td>
             <td>Binary</td>
             <td>Touhoumon 1.5x mechanics.</td>
         </tr>
@@ -313,8 +318,8 @@
             <td>Fire Red (U) v1.0</td>
             <td>Finished<br>2013/02/14</td>
             <td>Aichiya Sanae</td>
-            <td><a href="https://www.youtube.com/@AichiyaSanae">[YT]</a></td>
-            <td><a href="https://mega.nz/folder/P3p1SD7T#P0KvD3H-X-q6W4jTWtskhg/folder/7nYjiZDB">[MEGA]</a></td>
+            <td><a target="_blank" href="https://www.youtube.com/@AichiyaSanae">[YT]</a></td>
+            <td><a target="_blank" href="https://mega.nz/folder/P3p1SD7T#P0KvD3H-X-q6W4jTWtskhg/folder/7nYjiZDB">[MEGA]</a></td>
             <td>Binary</td>
             <td>Touhoumon 1.8x mechanics with numerous patches.</td>
         </tr>
@@ -328,8 +333,8 @@
             <td>Fire Red (U) v1.0</td>
             <td>Progressing<br>2022/11/04</td>
             <td>Zeta Sukuna</td>
-            <td><a href="https://www.pokecommunity.com/showthread.php?t=372999">[PC]</a></td>
-            <td><a href="https://www.mediafire.com/file/hl10lgtpr61j7xe/Touhou_Puppet_Play_Enhanced_%2528Reloaded%2529_v6.8B.rar/file">[MF]</a></td>
+            <td><a target="_blank" href="https://www.pokecommunity.com/showthread.php?t=372999">[PC]</a></td>
+            <td><a target="_blank" href="https://www.mediafire.com/file/hl10lgtpr61j7xe/Touhou_Puppet_Play_Enhanced_%2528Reloaded%2529_v6.8B.rar/file">[MF]</a></td>
             <td>Binary</td>
             <td>Improvement of Touhou Puppet Play Enhanced.</td>
         </tr>
@@ -344,7 +349,7 @@
             <td>Progressing<br>2025/10/27</td>
             <td>Gygablastre</td>
             <td>-</td>
-            <td><a href="https://drive.google.com/file/d/1lC6r50DCYRScB6fNUiAUupBVOegYEqfo/view?usp=sharing">[MF]</a></td>
+            <td><a target="_blank" href="https://drive.google.com/file/d/1lC6r50DCYRScB6fNUiAUupBVOegYEqfo/view?usp=sharing">[MF]</a></td>
             <td>Binary</td>
             <td>An updated version of Enhanced Reloaded, featuring a vast diverse set of trainers, as well as balancing and bug fixes. It features extra battles, regional fixes, stat changes on some Boneka, move balancing and more.</td>
         </tr>
@@ -358,8 +363,8 @@
             <td>Fire Red (U) v1.0</td>
             <td>Finished?<br>2019/05/26</td>
             <td>Blue</td>
-            <td><a href="https://touhoumonblue.blogspot.com/">[Blog]</a></td>
-            <td><a href="https://www.mediafire.com/file/l20yoy6s8xk32ek/Touhoumon_Blue.zip/file">[MF]</a></td>
+            <td><a target="_blank" href="https://touhoumonblue.blogspot.com/">[Blog]</a></td>
+            <td><a target="_blank" href="https://www.mediafire.com/file/l20yoy6s8xk32ek/Touhoumon_Blue.zip/file">[MF]</a></td>
             <td>Binary</td>
             <td>Touhoumon 1.5x mechanics.</td>
         </tr>
@@ -372,8 +377,8 @@
             <td>GBA</td>
             <td>Emerald (U)</td>
             <td>Progressing?<br>2023/05/19</td>
-            <td>Agastya/Mille</td><td><a href="http://lkaexe.supersanctuary.net/thmnemer18/">[Site]</a><br><a href="https://discord.gg/vMfMYms6Tg">[Dev Discord]</a></td>
-            <td><a href="http://lkaexe.supersanctuary.net/thmnemer18/purple.zip">[Site]</a></td>
+            <td>Agastya/Mille</td><td><a target="_blank" href="http://lkaexe.supersanctuary.net/thmnemer18/">[Site]</a><br><a target="_blank" href="https://discord.gg/vMfMYms6Tg">[Dev Discord]</a></td>
+            <td><a target="_blank" href="http://lkaexe.supersanctuary.net/thmnemer18/purple.zip">[Site]</a></td>
             <td>Binary</td>
             <td>Touhoumon 1.8x mechanics.</td>
         </tr>
@@ -387,8 +392,8 @@
             <td>Fire Red (U) v1.0</td>
             <td>Dropped<br>2019/09/10</td>
             <td>Agastya/Mille</td>
-            <td><a href="http://lkaexe.supersanctuary.net/kaizothmn/">[Site]</a></td>
-            <td><a href="http://lkaexe.supersanctuary.net/kaizothmn/kaizothmn.zip">[Site]</a></td>
+            <td><a target="_blank" href="http://lkaexe.supersanctuary.net/kaizothmn/">[Site]</a></td>
+            <td><a target="_blank" href="http://lkaexe.supersanctuary.net/kaizothmn/kaizothmn.zip">[Site]</a></td>
             <td>Binary</td>
             <td>Touhoumon 1.5x mechanics. For kaizo challenge.</td>
         </tr>
@@ -402,8 +407,8 @@
             <td>Fire Red (U) v1.0</td>
             <td>Finished<br>2019/07/20</td>
             <td>Doesnt</td>
-            <td><a href="https://nuzlockeforums.com/forum/threads/touhoumon-unnamed-1-8.2056/">[Nuz]</a></td>
-            <td><a href="http://www.mediafire.com/download/nmnb4pxww51a31m/ThmonUnnamed1.3.ips">[MF]</a></td>
+            <td><a target="_blank" href="https://nuzlockeforums.com/forum/threads/touhoumon-unnamed-1-8.2056/">[Nuz]</a></td>
+            <td><a target="_blank" href="http://www.mediafire.com/download/nmnb4pxww51a31m/ThmonUnnamed1.3.ips">[MF]</a></td>
             <td>Binary</td>
             <td>Touhoumon 1.5x mechanics.</td>
         </tr>
@@ -418,8 +423,8 @@
             <td>Progressing<br>2025/10/13</td>
             <td>Doesnt</td>
             <td>-</td>
-            <td><a href="https://github.com/Doesnty/borderless/releases/tag/v1.3.1">[Github]</a></td>
-            <td>Decomp<br><a href="https://github.com/Doesnty/borderless">[Git Repo]</a></td>
+            <td><a target="_blank" href="https://github.com/Doesnty/borderless/releases/tag/v1.3.1">[Github]</a></td>
+            <td>Decomp<br><a target="_blank" href="https://github.com/Doesnty/borderless">[Git Repo]</a></td>
             <td>Using custom mechanics. It has custom abilities, moves, etc. Practically 1.9x+++ mechanics.</td>
         </tr>
         <tr>
@@ -432,8 +437,8 @@
             <td>Emerald (U)</td>
             <td>Finished<br>[Long Ago]</td>
             <td>Agastya/Mille, ExSariel</td>
-            <td><a href="http://lkaexe.supersanctuary.net/">[Site]</a></td>
-            <td><a href="http://lkaexe.supersanctuary.net/thmnarchive/hoenn/ae/">[Site]</a></td>
+            <td><a target="_blank" href="http://lkaexe.supersanctuary.net/">[Site]</a></td>
+            <td><a target="_blank" href="http://lkaexe.supersanctuary.net/thmnarchive/hoenn/ae/">[Site]</a></td>
             <td>Binary</td>
             <td>Touhoumon 1.5x mechanics.</td>
         </tr>
@@ -447,8 +452,8 @@
             <td>Fire Red (U) v1.0</td>
             <td>Finished<br>2017/03/28</td>
             <td>Neotornado</td>
-            <td><a href="https://www.deviantart.com/neotornado">[DA]</a><br><a href="http://thpp.supersanctuary.net/forum/index.php?topic=310.0">[Site]</a></td>
-            <td><a href="https://www.mediafire.com/file/a5u7h66d03fn1ix/Touhoumon_Tweaked_%28Mar_27%2C_2017%29.zip">[MF]</a></td>
+            <td><a target="_blank" href="https://www.deviantart.com/neotornado">[DA]</a><br><a target="_blank" href="http://thpp.supersanctuary.net/forum/index.php?topic=310.0">[Site]</a></td>
+            <td><a target="_blank" href="https://www.mediafire.com/file/a5u7h66d03fn1ix/Touhoumon_Tweaked_%28Mar_27%2C_2017%29.zip">[MF]</a></td>
             <td>Binary</td>
             <td>Touhoumon 1.5x mechanics.</td>
         </tr>
@@ -463,7 +468,7 @@
             <td>Finished<br>2013/03/08</td>
             <td>Yui, Aqua</td>
             <td>-</td>
-            <td><a href="https://mega.nz/file/uqZnURbJ#qJeodRG62QENNNlTjtae8F6xgLUUSElDhtbKcueivaQ">[MEGA]</a></td>
+            <td><a target="_blank" href="https://mega.nz/file/uqZnURbJ#qJeodRG62QENNNlTjtae8F6xgLUUSElDhtbKcueivaQ">[MEGA]</a></td>
             <td>Binary</td>
             <td>Touhoumon 1.5x mechanics.</td>
         </tr>
@@ -478,7 +483,7 @@
             <td>Finished<br>[Long Ago]</td>
             <td>Draquaza</td>
             <td>-</td>
-            <td><a href="https://mega.nz/file/ymgxXD6D#EmYaBaGTl8VI9VfG6E5ulffdCKUT7aa_Ic16dtgFe-Q">[MEGA]</a></td>
+            <td><a target="_blank" href="https://mega.nz/file/ymgxXD6D#EmYaBaGTl8VI9VfG6E5ulffdCKUT7aa_Ic16dtgFe-Q">[MEGA]</a></td>
             <td>Binary</td>
             <td>Touhoumon 1.5x mechanics. Pain-peko.</td>
         </tr>
@@ -493,7 +498,7 @@
             <td>Finished<br>[Long Ago]</td>
             <td>AnjiruSensei</td>
             <td>-</td>
-            <td><a href="https://mega.nz/file/e7BlmD5A#W98vX8L5T7_xmU6jjeQpP_oW2-1vlUgmSv4j-3GEtG0">[MEGA]</a></td>
+            <td><a target="_blank" href="https://mega.nz/file/e7BlmD5A#W98vX8L5T7_xmU6jjeQpP_oW2-1vlUgmSv4j-3GEtG0">[MEGA]</a></td>
             <td>Binary</td>
             <td>Touhoumon 1.5x mechanics. Pain-peko.</td>
         </tr>
@@ -508,7 +513,7 @@
             <td>Finished<br>[Long Ago]</td>
             <td>AnjiruSensei</td>
             <td>-</td>
-            <td><a href="https://mega.nz/file/XnJDCbpD#a8B3mxLDUIaj2e8Dwncn5QEw00lnVCERV8V3db_wdFs">[MEGA]</a></td>
+            <td><a target="_blank" href="https://mega.nz/file/XnJDCbpD#a8B3mxLDUIaj2e8Dwncn5QEw00lnVCERV8V3db_wdFs">[MEGA]</a></td>
             <td>Binary</td>
             <td>Touhoumon 1.5x mechanics.</td>
         </tr>
@@ -523,7 +528,7 @@
             <td>Progressing<br>2025/11/11</td>
             <td>botschafer</td>
             <td>-</td>
-            <td><a href="https://mega.nz/file/DyYkBK7S#i_k9txI1_97ByWVzjfTQ7NlOmqP3RZ0DOWXQYNNX9H4">[MEGA]</a></td>
+            <td><a target="_blank" href="https://mega.nz/file/DyYkBK7S#i_k9txI1_97ByWVzjfTQ7NlOmqP3RZ0DOWXQYNNX9H4">[MEGA]</a></td>
             <td>Binary</td>
             <td>Touhoumon 1.5x mechanics.</td>
         </tr>
@@ -538,7 +543,7 @@
             <td>Finished<br>[Long Ago]</td>
             <td>Cirnokuun</td>
             <td>-</td>
-            <td><a href="https://mega.nz/file/b65wEQQR#QHVN38XRAdHhXr8EtlPOYtOmBHfDBhq0MjeFxDXtZF4">[MEGA]</a></td>
+            <td><a target="_blank" href="https://mega.nz/file/b65wEQQR#QHVN38XRAdHhXr8EtlPOYtOmBHfDBhq0MjeFxDXtZF4">[MEGA]</a></td>
             <td>Binary</td>
             <td>Touhoumon 1.5x mechanics.</td>
         </tr>
@@ -553,7 +558,7 @@
             <td>Finished<br>[Long Ago]</td>
             <td>FeKa</td>
             <td>-</td>
-            <td><a href="http://lkaexe.supersanctuary.net/thmnarchive/kanto/10enfekapatch/">[Site]</a></td>
+            <td><a target="_blank" href="http://lkaexe.supersanctuary.net/thmnarchive/kanto/10enfekapatch/">[Site]</a></td>
             <td>Binary</td>
             <td>Vanilla port</td>
         </tr>
@@ -568,7 +573,7 @@
             <td>Finished<br>[Long Ago]</td>
             <td>Lobsterhime</td>
             <td>-</td>
-            <td><a href="http://lkaexe.supersanctuary.net/thmnarchive/kanto/153lobsterhimepatch/">[Site]</a></td>
+            <td><a target="_blank" href="http://lkaexe.supersanctuary.net/thmnarchive/kanto/153lobsterhimepatch/">[Site]</a></td>
             <td>Binary</td>
             <td>Vanilla port</td>
         </tr>
@@ -582,8 +587,8 @@
             <td>Fire Red (U) v1.0</td>
             <td>Abandoned<br>2012/11/03</td>
             <td>Agastya/Mille</td>
-            <td><a href="http://lkaexe.supersanctuary.net/thmn18eng/">[Site]</a></td>
-            <td><a href="https://www.mediafire.com/?0ldy33xbsjb9ya6">[MF]</a></td>
+            <td><a target="_blank" href="http://lkaexe.supersanctuary.net/thmn18eng/">[Site]</a></td>
+            <td><a target="_blank" href="https://www.mediafire.com/?0ldy33xbsjb9ya6">[MF]</a></td>
             <td>Binary</td>
             <td>Vanilla port</td>
         </tr>
@@ -597,8 +602,8 @@
             <td>Diamond (U) v1.0</td>
             <td>Abandoned?<br>2015/02/04</td>
             <td>PlayNChao</td>
-            <td><a href="https://www.youtube.com/@PlayNChao">[YT]</a></td>
-            <td><a href="http://www.mediafire.com/download/6cmhz10yjf1sghr/Touhoumon_Diamond.rar">[MF]</a></td>
+            <td><a target="_blank" href="https://www.youtube.com/@PlayNChao">[YT]</a></td>
+            <td><a target="_blank" href="http://www.mediafire.com/download/6cmhz10yjf1sghr/Touhoumon_Diamond.rar">[MF]</a></td>
             <td>Binary</td>
             <td></td>
         </tr>
@@ -612,8 +617,8 @@
             <td>Heart Gold (U) v1.0</td>
             <td>Progressing<br>2023/08/23</td>
             <td>Tye</td>
-            <td><a href="http://'https://www.youtube.com/channel/UCFTc0bUGNIvcfUnTDDVS1VA">[YT]</a></td>
-            <td><a href="https://mega.nz/folder/0pgjVIgC#k-eo74fjMpu0vX2ldH6hqA/folder/5p4AlKxJ">[MEGA]</a></td>
+            <td><a target="_blank" href="http://'https://www.youtube.com/channel/UCFTc0bUGNIvcfUnTDDVS1VA">[YT]</a></td>
+            <td><a target="_blank" href="https://mega.nz/folder/0pgjVIgC#k-eo74fjMpu0vX2ldH6hqA/folder/5p4AlKxJ">[MEGA]</a></td>
             <td>Binary</td>
             <td></td>
         </tr>
@@ -627,8 +632,8 @@
             <td>Platinum (U) v1.0</td>
             <td>Progressing<br>2023/09/10</td>
             <td>Tye</td>
-            <td><a href="http://'https://www.youtube.com/channel/UCFTc0bUGNIvcfUnTDDVS1VA">[YT]</a></td>
-            <td><a href="https://mega.nz/folder/0pgjVIgC#k-eo74fjMpu0vX2ldH6hqA/folder/w140hSYC">[MEGA]</a></td>
+            <td><a target="_blank" href="http://'https://www.youtube.com/channel/UCFTc0bUGNIvcfUnTDDVS1VA">[YT]</a></td>
+            <td><a target="_blank" href="https://mega.nz/folder/0pgjVIgC#k-eo74fjMpu0vX2ldH6hqA/folder/w140hSYC">[MEGA]</a></td>
             <td>Binary</td>
             <td></td>
         </tr>
@@ -642,8 +647,8 @@
             <td>Gold (K) v1.0</td>
             <td>Progressing<br>2024/07/04</td>
             <td>5월 14일 장미</td>
-            <td><a href="https://blog.naver.com/kmjsk0514">[Naver]</a></td>
-            <td><a href="https://download.blog.naver.com/open/4edb52e2f7a3aa765bbedeebd932493393c339dfee/UOEd4uFSU2BuFrFF5CikWIIYZv2o6iwnMee6nLQcjwJpDSCuVx06XxIO4gzuI40iV_rdCN5QqbpHIg5bxKWMGQ/%EB%8F%99%EB%B0%A9%EC%9D%B8%ED%98%95%EA%B7%B9RE%20%28V24.7.04%29.zip">[DDL]</a></td>
+            <td><a target="_blank" href="https://blog.naver.com/kmjsk0514">[Naver]</a></td>
+            <td><a target="_blank" href="https://download.blog.naver.com/open/4edb52e2f7a3aa765bbedeebd932493393c339dfee/UOEd4uFSU2BuFrFF5CikWIIYZv2o6iwnMee6nLQcjwJpDSCuVx06XxIO4gzuI40iV_rdCN5QqbpHIg5bxKWMGQ/%EB%8F%99%EB%B0%A9%EC%9D%B8%ED%98%95%EA%B7%B9RE%20%28V24.7.04%29.zip">[DDL]</a></td>
             <td>Binary</td>
             <td></td>
         </tr>
@@ -659,7 +664,7 @@
             <td>sikieiki0</td>
             <td>-</td>
             <td>TBA</td>
-            <td>Decomp<br><a href="https://github.com/sikieiki0/Touhou-Puppet-Play-Crystal">[Git Repo]</a></td>
+            <td>Decomp<br><a target="_blank" href="https://github.com/sikieiki0/Touhou-Puppet-Play-Crystal">[Git Repo]</a></td>
             <td></td>
         </tr>
         <tr>
@@ -673,7 +678,7 @@
             <td>Finished</td>
             <td>へもぐろびんA1C</td>
             <td>-</td>
-            <td><a href="https://uu.getuploader.com/ningyougekikousiki/download/3">[Uploader]</a></td>
+            <td><a target="_blank" href="https://uu.getuploader.com/ningyougekikousiki/download/3">[Uploader]</a></td>
             <td>Binary</td>
             <td>Official Japanese Touhou Puppet Play</td>
         </tr>
@@ -688,7 +693,7 @@
             <td>Finished</td>
             <td>へもぐろびんA1C</td>
             <td>-</td>
-            <td><a href="https://uu.getuploader.com/ningyougekikousiki/download/4">[Uploader]</a></td>
+            <td><a target="_blank" href="https://uu.getuploader.com/ningyougekikousiki/download/4">[Uploader]</a></td>
             <td>Binary</td>
             <td>Official Japanese Touhou Puppet Play ver 1.5x</td>
         </tr>
@@ -703,7 +708,7 @@
             <td>Finished</td>
             <td>へもぐろびんA1C</td>
             <td>-</td>
-            <td><a href="https://uu.getuploader.com/ningyougekikousiki/download/5">[Uploader]</a></td>
+            <td><a target="_blank" href="https://uu.getuploader.com/ningyougekikousiki/download/5">[Uploader]</a></td>
             <td>Binary</td>
             <td>Official Japanese Touhou Puppet Play ver 1.8x</td>
         </tr>
@@ -717,10 +722,10 @@
             <td>FireRed (J) v1.0</td>
             <td>Progressing<br>2025/10/29</td>
             <td>reimufate</td>
-            <td><a href="https://ameblo.jp/reimufatever/">[Blog]</a><br><a href="https://www.youtube.com/@reimufate">[YT]</a><br><a href="https://www.nicovideo.jp/user/38207307">[NicoNico]</a><br><a href="https://twitter.com/reimufate">[X]</a><br><a href="https://www.pixiv.net/en/users/7913355">[Pixiv]</a><br><a href="https://discord.gg/Dmy774CeA9">[Dev Discord]</a></td>
-            <td><a href="https://ux.getuploader.com/reimu016/">[Uploader]</a></td>
+            <td><a target="_blank" href="https://ameblo.jp/reimufatever/">[Blog]</a><br><a target="_blank" href="https://www.youtube.com/@reimufate">[YT]</a><br><a target="_blank" href="https://www.nicovideo.jp/user/38207307">[NicoNico]</a><br><a target="_blank" href="https://twitter.com/reimufate">[X]</a><br><a target="_blank" href="https://www.pixiv.net/en/users/7913355">[Pixiv]</a><br><a target="_blank" href="https://discord.gg/Dmy774CeA9">[Dev Discord]</a></td>
+            <td><a target="_blank" href="https://ux.getuploader.com/reimu016/">[Uploader]</a></td>
             <td>Binary</td>
-            <td>A custom patch with extended puppets, story, and areas.<br>The latest <a href="https://ameblo.jp/reimufatever/entry-12941941137.html">2025/10/29 update</a> includes casts up to Touhou 20 and several custom sets from Touhou Lost Word.<br><br>Patch instruction: Apply patch to 東方人形劇 (Touhou Puppet Play) ver1.812 Renko, not to vanilla FireRed (J).<br>Fire Red (J) → 東方人形劇ver1.812 → 東方人形劇 reimufate.</td>
+            <td>A custom patch with extended puppets, story, and areas.<br>The latest <a target="_blank" href="https://ameblo.jp/reimufatever/entry-12941941137.html">2025/10/29 update</a> includes casts up to Touhou 20 and several custom sets from Touhou Lost Word.<br><br>Patch instruction: Apply patch to 東方人形劇 (Touhou Puppet Play) ver1.812 Renko, not to vanilla FireRed (J).<br>Fire Red (J) → 東方人形劇ver1.812 → 東方人形劇 reimufate.</td>
         </tr>
         <tr>
             <td>43</td>
@@ -732,8 +737,8 @@
             <td>FireRed (J) v1.0</td>
             <td>Progressing<br>2025/10/29</td>
             <td>Ealgrete / KecleonTencho</td>
-            <td><a href="https://www.youtube.com/@KecleonTencho">[YT]</a><br><a href="https://www.nicovideo.jp/user/3548196">[NicoNico]</a><br><a href="https://twitter.com/kecleontencho">[X]</a></td>
-            <td><a href="https://uu.getuploader.com/ningyougekihikousiki/download/773">[Uploader]</a></td>
+            <td><a target="_blank" href="https://www.youtube.com/@KecleonTencho">[YT]</a><br><a target="_blank" href="https://www.nicovideo.jp/user/3548196">[NicoNico]</a><br><a target="_blank" href="https://twitter.com/kecleontencho">[X]</a></td>
+            <td><a target="_blank" href="https://uu.getuploader.com/ningyougekihikousiki/download/773">[Uploader]</a></td>
             <td>Binary</td>
             <td>The continuation of the old Gensokyo Scenario. Now, the patch uses version 1.812 as the base.<br>The latest version of Zoku Gensokyo Scenario Patch is 1.008, updated on 2017/02/04.</td>
         </tr>
@@ -747,8 +752,8 @@
             <td>FireRed (J) v1.0</td>
             <td>Finished<br>2014/05/25</td>
             <td>Dsire_E</td>
-            <td><a href="http://enma10touho2gamer.blog112.fc2.com/">[Blog]</a></td>
-            <td><a href="https://uu.getuploader.com/ningyougekihikousiki/download/625">[Uploader]</a></td>
+            <td><a target="_blank" href="http://enma10touho2gamer.blog112.fc2.com/">[Blog]</a></td>
+            <td><a target="_blank" href="https://uu.getuploader.com/ningyougekihikousiki/download/625">[Uploader]</a></td>
             <td>Binary</td>
             <td>A hard difficulty patch for version 1.812.</td>
         </tr>
@@ -763,7 +768,7 @@
             <td>Finished<br>2023/07/23</td>
             <td>???</td>
             <td>-</td>
-            <td><a href="https://uu.getuploader.com/ningyougekihikousiki/download/821">[Uploader]</a></td>
+            <td><a target="_blank" href="https://uu.getuploader.com/ningyougekihikousiki/download/821">[Uploader]</a></td>
             <td>Binary</td>
             <td>The Japanese port of Touhoumon Heart Gold.</td>
         </tr>
@@ -778,7 +783,7 @@
             <td>Progressing<br>2025/11/20</td>
             <td>Light Paladin</td>
             <td>-</td>
-            <td><a href="https://mega.nz/file/6v5GVDCA#Iwbxs3BFks5UVJR58rcCMVrTjROd3Cc8pRU3xk-K4BI">[Mega]</a></td>
+            <td><a target="_blank" href="https://mega.nz/file/6v5GVDCA#Iwbxs3BFks5UVJR58rcCMVrTjROd3Cc8pRU3xk-K4BI">[Mega]</a></td>
             <td>Binary</td>
             <td>Omori-themed romhack.</td>
         </tr>
@@ -792,8 +797,8 @@
             <td>FireRed (U) v1.0</td>
             <td>Progressing<br>2025/06/12</td>
             <td>ortz3</td>
-            <td><a href="https://pokedueldb.com/">[Website]</a><br><a href="https://www.pokecommunity.com/threads/yu-gi-oh-pokeduel.445345/">[PC]</a></td>
-            <td><a href="https://www.mediafire.com/file/w3er84awtryb18x/Yu-Gi-Oh_POKeDUEL-v4.0.6.zip/file">[MF]</a></td>
+            <td><a target="_blank" href="https://pokedueldb.com/">[Website]</a><br><a target="_blank" href="https://www.pokecommunity.com/threads/yu-gi-oh-pokeduel.445345/">[PC]</a></td>
+            <td><a target="_blank" href="https://www.mediafire.com/file/w3er84awtryb18x/Yu-Gi-Oh_POKeDUEL-v4.0.6.zip/file">[MF]</a></td>
             <td>Binary (+CFRU)</td>
             <td>Yu-Gi-Oh!-themed romhack.</td>
         </tr>
@@ -807,8 +812,8 @@
             <td>FireRed (U) v1.0</td>
             <td>Progressing<br>2025/06/12</td>
             <td>RolfySoft</td>
-            <td><a href="https://www.youtube.com/channel/UCidpy37goi-JhsJuYXSNOEg">[YT]</a><br><a href="https://x.com/PokeSmashBros">[X]</a></td>
-            <td><a href="https://mega.nz/file/ojFREKbb#AJA7nJ6_8LiUh4JBRXSpzynz0hHCGblUioB7IZB5TbA">[MEGA]</a></td>
+            <td><a target="_blank" href="https://www.youtube.com/channel/UCidpy37goi-JhsJuYXSNOEg">[YT]</a><br><a target="_blank" href="https://x.com/PokeSmashBros">[X]</a></td>
+            <td><a target="_blank" href="https://mega.nz/file/ojFREKbb#AJA7nJ6_8LiUh4JBRXSpzynz0hHCGblUioB7IZB5TbA">[MEGA]</a></td>
             <td>Binary (+CFRU)</td>
             <td>Including various franchises such as Mario, Touhou, Digimon, Zelda, RWBY, etc.</td>
         </tr>
@@ -822,8 +827,8 @@
             <td>Emerald (U)</td>
             <td>Progressing<br>2025/05/16</td>
             <td>Too Many Productions</td>
-            <td><a href="https://www.pokecommunity.com/threads/super-mariomon.535764/">[PC]</a><br><a href="https://discord.gg/Wf42mHRwWq">[Discord]</a></td>
-            <td><a href="https://drive.google.com/file/d/1MdDm51F4aDR_fqy0xS0kc3QVJhr_pELF/view?usp=sharing">[GDrive]</a></td>
+            <td><a target="_blank" href="https://www.pokecommunity.com/threads/super-mariomon.535764/">[PC]</a><br><a target="_blank" href="https://discord.gg/Wf42mHRwWq">[Discord]</a></td>
+            <td><a target="_blank" href="https://drive.google.com/file/d/1MdDm51F4aDR_fqy0xS0kc3QVJhr_pELF/view?usp=sharing">[GDrive]</a></td>
             <td>Decomp</td>
             <td>Experience an entirely fleshed out region - the Mushroom Kingdom! A fusion of Pokemon and Mario, Super Mariomon is Too Many Production's most ambitious project yet!.</td>
         </tr>
@@ -837,8 +842,8 @@
             <td>Emerald (U)</td>
             <td>Finished</td>
             <td>Guzeinbuick</td>
-            <td><a href="https://www.pokecommunity.com/threads/completed-digimon-emerald-project.467949/">[PC]</a><br><a href="https://www.youtube.com/@TheGuzeinbuick">[YT]</a></td>
-            <td><a href="https://www.mediafire.com/file/f9g17g6doeyzfyt/Digimon_Emerald_Project_2.0.zip/file">[MF]</a></td>
+            <td><a target="_blank" href="https://www.pokecommunity.com/threads/completed-digimon-emerald-project.467949/">[PC]</a><br><a target="_blank" href="https://www.youtube.com/@TheGuzeinbuick">[YT]</a></td>
+            <td><a target="_blank" href="https://www.mediafire.com/file/f9g17g6doeyzfyt/Digimon_Emerald_Project_2.0.zip/file">[MF]</a></td>
             <td>Binary</td>
             <td>350+ new monsters with unique stats, abilities, Typing, and movepools built from the ground-up!</td>
         </tr>
@@ -852,8 +857,8 @@
             <td>FireRed (U) v1.0</td>
             <td>Finished</td>
             <td>Guzeinbuick</td>
-            <td><a href="https://www.pokecommunity.com/threads/digimon-nova-red-ver-3-1-completed-updated-8-12-2022.455680/">[PC]</a><br><a href="https://www.youtube.com/@TheGuzeinbuick">[YT]</a></td>
-            <td><a href="https://www.mediafire.com/file/3ok1edpihihtaw9/Digimon+Nova+Red+3.2.zip/file">[MF]</a></td>
+            <td><a target="_blank" href="https://www.pokecommunity.com/threads/digimon-nova-red-ver-3-1-completed-updated-8-12-2022.455680/">[PC]</a><br><a target="_blank" href="https://www.youtube.com/@TheGuzeinbuick">[YT]</a></td>
+            <td><a target="_blank" href="https://www.mediafire.com/file/3ok1edpihihtaw9/Digimon+Nova+Red+3.2.zip/file">[MF]</a></td>
             <td>Binary</td>
             <td>350+ new monsters with unique stats, abilities, Typing, and movepools built from the ground-up!</td>
         </tr>
@@ -867,8 +872,8 @@
             <td>Crystal (U)</td>
             <td>Finished</td>
             <td>Guzeinbuick</td>
-            <td><a href="https://www.pokecommunity.com/threads/digimon-nova-red-ver-3-1-completed-updated-8-12-2022.455680/">[PC]</a><br><a href="https://www.youtube.com/@TheGuzeinbuick">[YT]</a></td>
-            <td><a href="https://www.mediafire.com/file/hwi9i9xqe978qkl/Digimon_Crystal_patch_file.zip/file">[MF]</a></td>
+            <td><a target="_blank" href="https://www.pokecommunity.com/threads/digimon-nova-red-ver-3-1-completed-updated-8-12-2022.455680/">[PC]</a><br><a target="_blank" href="https://www.youtube.com/@TheGuzeinbuick">[YT]</a></td>
+            <td><a target="_blank" href="https://www.mediafire.com/file/hwi9i9xqe978qkl/Digimon_Crystal_patch_file.zip/file">[MF]</a></td>
             <td>Decomp?</td>
             <td>All 251 Pokemon replaced with Digimon.</td>
         </tr>
@@ -882,8 +887,8 @@
             <td>Trading Card Game (U)</td>
             <td>Progressing<br>2025/08/30</td>
             <td>Guzeinbuick</td>
-            <td><a href="https://www.pokecommunity.com/threads/digimon-adventure-tcg-remastered-hugely-updated-8-30-2025.501014/">[PC]</a><br><a href="https://www.youtube.com/@TheGuzeinbuick">[YT]</a></td>
-            <td><a href="https://www.mediafire.com/file/8d0ex3qlwl1fi7n/Digimon_Adventure_TCG_Remastered_patch_file.ips/file">[MF]</a></td>
+            <td><a target="_blank" href="https://www.pokecommunity.com/threads/digimon-adventure-tcg-remastered-hugely-updated-8-30-2025.501014/">[PC]</a><br><a target="_blank" href="https://www.youtube.com/@TheGuzeinbuick">[YT]</a></td>
+            <td><a target="_blank" href="https://www.mediafire.com/file/8d0ex3qlwl1fi7n/Digimon_Adventure_TCG_Remastered_patch_file.ips/file">[MF]</a></td>
             <td>Decomp?</td>
             <td>That's right boyos. It's the Pokemon TCG. But with Digimon.</td>
         </tr>
@@ -903,6 +908,19 @@ function filterTable(colIndex, inputElement) {
       tr[i].style.display = (txtValue.toUpperCase().indexOf(filter) > -1) ? "" : "none";
     }
   }
+}
+</script>
+
+<script>
+function exportTableToXLSX(tableID, filename){
+  // Get table element
+  var table = document.getElementById(tableID);
+
+  // Convert table to worksheet
+  var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet1"});
+
+  // Write workbook and trigger download
+  XLSX.writeFile(wb, filename + ".xlsx");
 }
 </script>
 

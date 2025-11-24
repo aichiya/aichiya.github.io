@@ -4,63 +4,77 @@
 
 <center><font color="blue" size="7">A Quick List Pokemon Romhack with non-Pokemon Fakemon</font></center>
 <br>
-<font color="red" size="5">Touhoumon / Touhou Puppet Play / 東方人形劇</font><br>
-<br>
 
 <style>
-* {
-  box-sizing: border-box;
-}
+  #myTable {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 16px;
+    border: 2px solid #333;
+  }
 
-#myInput {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-}
+  #myTable th, #myTable td {
+    border: 1px solid #999;
+    padding: 10px;
+  }
 
-#myTable {
-  border-collapse: collapse;
-  width: 100%;
-  border: 1px solid #ddd;
-  font-size: 18px;
-}
+  /* Header styling */
+  #myTable th {
+    background-color: #004080;
+    color: white;
+    vertical-align: bottom;   /* align content to bottom */
+    text-align: center;       /* center horizontally */
+  }
 
-#myTable th, #myTable td {
-  text-align: left;
-  padding: 12px;
-}
+  /* Search boxes inside headers */
+  #myTable th input {
+    width: 90%;
+    box-sizing: border-box;
+    padding: 5px;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;       /* center horizontally */
+  }
 
-#myTable tr {
-  border-bottom: 1px solid #ddd;
-}
+  /* Body rows: top-left alignment */
+  #myTable td {
+    vertical-align: top;      /* align to top */
+    text-align: left;         /* align to left */
+  }
 
-#myTable tr.header, #myTable tr:hover {
-  background-color: #f1f1f1;
-}
+  /* Banded rows */
+  #myTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  #myTable tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+
+  /* Hover effect */
+  #myTable tr:hover {
+    background-color: #d6e9f7;
+  }
 </style>
-
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 
 <table id="myTable">
     <thead>
         <tr class="header">
-            <th>No</th>
-            <th>Franchise</th>
-            <th>Hack Names</th>
-            <th>Language</th>
-            <th>Latest Ver</th>
-            <th>Console</th>
-            <th>Base<br>ROM</th>
-            <th>Status<br>(yy/mm/dd)</th>
-            <th>Author</th><th>Links</th>
-            <th>Patch Download</th>
-            <th>Romhack Type</th>
-            <th>Notes</th>
+            <th><center>No<br><input type="text" onkeyup="filterTable(0,this)" placeholder="Search No"></center></th>
+            <th><center>Franchise<br><input type="text" onkeyup="filterTable(1,this)" placeholder="Search Franchise"></center></th>
+            <th><center>Hack Names<br><input type="text" onkeyup="filterTable(2,this)" placeholder="Search Hack"></center></th>
+            <th><center>Language<br><input type="text" onkeyup="filterTable(3,this)" placeholder="Search Language"></center></th>
+            <th><center>Latest Ver<br><input type="text" onkeyup="filterTable(4,this)" placeholder="Search Ver"></center></th>
+            <th><center>Console<br><input type="text" onkeyup="filterTable(5,this)" placeholder="Search Console"></center></th>
+            <th><center>Base ROM<br><input type="text" onkeyup="filterTable(6,this)" placeholder="Search Base"></center></th>
+            <th><center>Status<br><input type="text" onkeyup="filterTable(7,this)" placeholder="Search Status"></center></th>
+            <th><center>Author<br><input type="text" onkeyup="filterTable(8,this)" placeholder="Search Author"></center></th>
+            <th><center>Links<br><input type="text" onkeyup="filterTable(9,this)" placeholder="Search Links"></center></th>
+            <th><center>Patch Download<br><input type="text" onkeyup="filterTable(10,this)" placeholder="Search Patch"></center></th>
+            <th><center>Romhack Type<br><input type="text" onkeyup="filterTable(11,this)" placeholder="Search Type"></center></th>
+            <th><center>Notes<br><input type="text" onkeyup="filterTable(12,this)" placeholder="Search Notes"></center></th>
         </tr>
     </thead>
     <tbody>
@@ -861,24 +875,16 @@
 </table>
 
 <script>
-function myFunction() {
-  // Declare variables
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
+function filterTable(colIndex, inputElement) {
+  var filter = inputElement.value.toUpperCase();
+  var table = document.getElementById("myTable");
+  var tr = table.getElementsByTagName("tr");
 
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[2];
+  for (var i = 1; i < tr.length; i++) { // skip header row
+    var td = tr[i].getElementsByTagName("td")[colIndex];
     if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
+      var txtValue = td.textContent || td.innerText;
+      tr[i].style.display = (txtValue.toUpperCase().indexOf(filter) > -1) ? "" : "none";
     }
   }
 }

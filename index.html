@@ -1244,16 +1244,16 @@ function filterTable(colIndex, input) {
 function parseBaseRom(value) {
   let cleaned = value.trim();
 
-  // Extract region code (U), (J), (K) if present
-  let regionMatch = cleaned.match(/\((.*?)\)/);
-  let region = regionMatch ? regionMatch[1].toUpperCase() : "";
+  // Region (U), (J), (K), etc.
+  const regionMatch = cleaned.match(/\((.*?)\)/);
+  const region = regionMatch ? regionMatch[1].toUpperCase() : "";
 
-  // Extract version if present
-  let versionMatch = cleaned.match(/v(\d+(\.\d+)?)/i);
-  let version = versionMatch ? parseFloat(versionMatch[1]) : 0;
+  // Version like v1.0, v1.1, v2.0
+  const versionMatch = cleaned.match(/v(\d+(\.\d+)?)/i);
+  const version = versionMatch ? parseFloat(versionMatch[1]) : 0;
 
-  // Remove region + version from ROM name
-  let name = cleaned
+  // Name without region/version
+  const name = cleaned
     .replace(/\(.*?\)/g, "")
     .replace(/v\d+(\.\d+)?/i, "")
     .trim()
@@ -1264,27 +1264,42 @@ function parseBaseRom(value) {
 
 function sortTable(colIndex, asc) {
   const table = document.getElementById("myTable");
-  const rows = Array.from(table.tBodies[0].rows);
+  const tbody = table.tBodies[0];
+  const rows = Array.from(tbody.rows).filter(r => r.style.display !== "none");
 
   rows.sort((a, b) => {
-    let valA = parseBaseRom(a.cells[colIndex].innerText);
-    let valB = parseBaseRom(b.cells[colIndex].innerText);
+    const Araw = a.cells[colIndex]?.innerText.trim() || "";
+    const Braw = b.cells[colIndex]?.innerText.trim() || "";
 
-    // Compare ROM names alphabetically
-    let cmp = valA.name.localeCompare(valB.name);
-    if (cmp === 0) {
-      // If names are equal, compare version numbers
-      cmp = valA.version - valB.version;
+    let cmp = 0;
+
+    // 0 = "No" column: numeric sort
+    if (colIndex === 0) {
+      const numA = parseFloat(Araw.replace(/[^\d.-]/g, "")) || 0;
+      const numB = parseFloat(Braw.replace(/[^\d.-]/g, "")) || 0;
+      cmp = numA - numB;
+
+    // 6 = "Base ROM" column: name -> version -> region
+    } else if (colIndex === 6) {
+      const A = parseBaseRom(Araw);
+      const B = parseBaseRom(Braw);
+      cmp = A.name.localeCompare(B.name);
       if (cmp === 0) {
-        // If version also equal, compare region codes alphabetically
-        cmp = valA.region.localeCompare(valB.region);
+        cmp = A.version - B.version;
+        if (cmp === 0) {
+          cmp = A.region.localeCompare(B.region);
+        }
       }
+
+    // Default: simple alphabetical
+    } else {
+      cmp = Araw.toLowerCase().localeCompare(Braw.toLowerCase());
     }
 
     return asc ? cmp : -cmp;
   });
 
-  rows.forEach(r => table.tBodies[0].appendChild(r));
+  rows.forEach(row => tbody.appendChild(row));
 }
 
 </script>

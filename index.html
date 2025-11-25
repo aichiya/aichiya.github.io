@@ -71,6 +71,18 @@
   }
 </style>
 
+<style>
+  .sort-arrow {
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 4px;
+    color: #ff6600;
+  }
+  .sort-arrow:hover {
+    color: #cc3300;
+  }
+</style>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
 <div class="table-title">
@@ -83,20 +95,77 @@
 <table id="myTable">
     <thead>
         <tr class="header">
-            <th><center>No<br><input type="text" onkeyup="filterTable(0,this)" placeholder="Search No"></center></th>
-            <th><center>Franchise<br><input type="text" onkeyup="filterTable(1,this)" placeholder="Search Franchise"></center></th>
-            <th><center>Hack Names<br><input type="text" onkeyup="filterTable(2,this)" placeholder="Search Hack"></center></th>
-            <th><center>Language<br><input type="text" onkeyup="filterTable(3,this)" placeholder="Search Language"></center></th>
-            <th><center>Latest Ver<br><input type="text" onkeyup="filterTable(4,this)" placeholder="Search Ver"></center></th>
-            <th><center>Console<br><input type="text" onkeyup="filterTable(5,this)" placeholder="Search Console"></center></th>
-            <th><center>Base ROM<br><input type="text" onkeyup="filterTable(6,this)" placeholder="Search Base"></center></th>
-            <th><center>Status<br><input type="text" onkeyup="filterTable(7,this)" placeholder="Search Status"></center></th>
-            <th><center>Last Update<br><input type="text" onkeyup="filterTable(8,this)" placeholder="Search Update"></center></th>
-            <th><center>Author<br><input type="text" onkeyup="filterTable(9,this)" placeholder="Search Author"></center></th>
-            <th><center>Links<br><input type="text" onkeyup="filterTable(10,this)" placeholder="Search Links"></center></th>
-            <th><center>Patch Download<br><input type="text" onkeyup="filterTable(11,this)" placeholder="Search Patch"></center></th>
-            <th><center>Romhack Type<br><input type="text" onkeyup="filterTable(12,this)" placeholder="Search Type"></center></th>
-            <th><center>Notes<br><input type="text" onkeyup="filterTable(13,this)" placeholder="Search Notes"></center></th>
+            <th><center>
+                No<br><input type="text" onkeyup="filterTable(0,this)" placeholder="Search No">
+                <span class="sort-arrow" onclick="sortTable(0,true)">▲</span>
+                <span class="sort-arrow" onclick="sortTable(0,false)">▼</span>
+                </center>
+            </th>
+            <th><center>
+                Franchise<br><input type="text" onkeyup="filterTable(1,this)" placeholder="Search Franchise">
+                <span class="sort-arrow" onclick="sortTable(1,true)">▲</span>
+                <span class="sort-arrow" onclick="sortTable(1,false)">▼</span>
+                </center></th>
+            <th><center>
+                Hack Names<br><input type="text" onkeyup="filterTable(2,this)" placeholder="Search Hack">
+                <span class="sort-arrow" onclick="sortTable(2,true)">▲</span>
+                <span class="sort-arrow" onclick="sortTable(2,false)">▼</span>
+                </center></th>
+            <th><center>
+                Language<br><input type="text" onkeyup="filterTable(3,this)" placeholder="Search Language">
+                <span class="sort-arrow" onclick="sortTable(3,true)">▲</span>
+                <span class="sort-arrow" onclick="sortTable(3,false)">▼</span>
+                </center></th>
+            <th><center>
+                Latest Ver<br><input type="text" onkeyup="filterTable(4,this)" placeholder="Search Ver">
+                <span class="sort-arrow" onclick="sortTable(4,true)">▲</span>
+                <span class="sort-arrow" onclick="sortTable(4,false)">▼</span>
+                </center></th>
+            <th><center>
+                Console<br><input type="text" onkeyup="filterTable(5,this)" placeholder="Search Console">
+                <span class="sort-arrow" onclick="sortTable(5,true)">▲</span>
+                <span class="sort-arrow" onclick="sortTable(5,false)">▼</span>
+                </center></th>
+            <th><center>
+                Base ROM<br><input type="text" onkeyup="filterTable(6,this)" placeholder="Search Base">
+                <span class="sort-arrow" onclick="sortTable(6,true)">▲</span>
+                <span class="sort-arrow" onclick="sortTable(6,false)">▼</span>
+                </center></th>
+            <th><center>
+                Status<br><input type="text" onkeyup="filterTable(7,this)" placeholder="Search Status">
+                <span class="sort-arrow" onclick="sortTable(7,true)">▲</span>
+                <span class="sort-arrow" onclick="sortTable(7,false)">▼</span>
+                </center></th>
+            <th><center>
+                Last Update<br><input type="text" onkeyup="filterTable(8,this)" placeholder="Search Update">
+                <span class="sort-arrow" onclick="sortTable(8,true)">▲</span>
+                <span class="sort-arrow" onclick="sortTable(8,false)">▼</span>
+                </center></th>
+            <th><center>
+                Author<br><input type="text" onkeyup="filterTable(9,this)" placeholder="Search Author">
+                <span class="sort-arrow" onclick="sortTable(9,true)">▲</span>
+                <span class="sort-arrow" onclick="sortTable(9,false)">▼</span>
+                </center></th>
+            <th><center>
+                Links<br><input type="text" onkeyup="filterTable(10,this)" placeholder="Search Links">
+                <span class="sort-arrow" onclick="sortTable(10,true)">▲</span>
+                <span class="sort-arrow" onclick="sortTable(10,false)">▼</span>
+                </center></th>
+            <th><center>
+                Patch Download<br><input type="text" onkeyup="filterTable(11,this)" placeholder="Search Patch">
+                <span class="sort-arrow" onclick="sortTable(11,true)">▲</span>
+                <span class="sort-arrow" onclick="sortTable(11,false)">▼</span>
+                </center></th>
+            <th><center>
+                Romhack Type<br><input type="text" onkeyup="filterTable(12,this)" placeholder="Search Type">
+                <span class="sort-arrow" onclick="sortTable(12,true)">▲</span>
+                <span class="sort-arrow" onclick="sortTable(12,false)">▼</span>
+                </center></th>
+            <th>
+                <center>Notes<br><input type="text" onkeyup="filterTable(13,this)" placeholder="Search Notes">
+                <span class="sort-arrow" onclick="sortTable(13,true)">▲</span>
+                <span class="sort-arrow" onclick="sortTable(13,false)">▼</span>
+                </center></th>
         </tr>
     </thead>
     <tbody>
@@ -1094,73 +1163,59 @@
 </table>
 
 <script>
-function filterTable(colIndex, inputElement) {
-  var filter = inputElement.value.toUpperCase();
-  var table = document.getElementById("myTable");
-  var tr = table.getElementsByTagName("tr");
+function filterTable(colIndex, input) {
+  const filter = input.value.toLowerCase();
+  const table = document.getElementById("myTable");
+  const rows = table.tBodies[0].rows;
 
-  for (var i = 1; i < tr.length; i++) { // skip header row
-    var td = tr[i].getElementsByTagName("td")[colIndex];
-    if (td) {
-      var txtValue = td.textContent || td.innerText;
-      tr[i].style.display = (txtValue.toUpperCase().indexOf(filter) > -1) ? "" : "none";
+  for (let i = 0; i < rows.length; i++) {
+    const cell = rows[i].cells[colIndex];
+    if (cell) {
+      const txtValue = cell.textContent || cell.innerText;
+      rows[i].style.display = txtValue.toLowerCase().indexOf(filter) > -1 ? "" : "none";
     }
   }
+}
+
+function sortTable(colIndex, asc) {
+  const table = document.getElementById("myTable");
+  const tbody = table.tBodies[0];
+  const rows = Array.from(tbody.rows).filter(r => r.style.display !== "none");
+
+  rows.sort((a, b) => {
+    let A = a.cells[colIndex].innerText.trim().toLowerCase();
+    let B = b.cells[colIndex].innerText.trim().toLowerCase();
+
+    const numA = parseFloat(A.replace(/[^\d.-]/g, ""));
+    const numB = parseFloat(B.replace(/[^\d.-]/g, ""));
+    if (!isNaN(numA) && !isNaN(numB)) {
+      return asc ? numA - numB : numB - numA;
+    }
+    return asc ? A.localeCompare(B) : B.localeCompare(A);
+  });
+
+  rows.forEach(row => tbody.appendChild(row));
 }
 </script>
 
 <script>
-function exportStyledXLSX(tableID, filename){
-  // Get table element
-  var table = document.getElementById(tableID);
+function exportStyledXLSX(tableId, filename) {
+  const table = document.getElementById(tableId);
+  const wb = XLSX.utils.book_new();
 
-  // Convert table to worksheet
-  var ws = XLSX.utils.table_to_sheet(table);
+  // Clone table to avoid modifying original
+  const clone = table.cloneNode(true);
 
-  // Apply header style
-  const range = XLSX.utils.decode_range(ws['!ref']);
-  for(let C = range.s.c; C <= range.e.c; ++C){
-    const cell = ws[XLSX.utils.encode_cell({r:0, c:C})];
-    if(cell){
-      cell.s = {
-        fill: { fgColor: { rgb: "004080" } }, // dark blue background
-        font: { color: { rgb: "FFFFFF" }, bold: true }, // white bold text
-        alignment: { horizontal: "center", vertical: "bottom" }
-      };
-    }
-  }
+  // Remove sort arrows from cloned header
+  clone.querySelectorAll(".sort-arrow").forEach(el => el.remove());
 
-  // Apply banded row style
-  for(let R = range.s.r+1; R <= range.e.r; ++R){
-    const isEven = (R % 2 === 0);
-    for(let C = range.s.c; C <= range.e.c; ++C){
-      const cell = ws[XLSX.utils.encode_cell({r:R, c:C})];
-      if(cell){
-        cell.s = {
-          fill: { fgColor: { rgb: isEven ? "F9F9F9" : "FFFFFF" } },
-          alignment: { horizontal: "left", vertical: "top" }
-        };
-      }
-    }
-  }
+  // Convert to worksheet
+  const ws = XLSX.utils.table_to_sheet(clone);
 
-  // Convert <a> links into real Excel hyperlinks
-  for(let R = range.s.r+1; R <= range.e.r; ++R){
-    for(let C = range.s.c; C <= range.e.c; ++C){
-      const cell = ws[XLSX.utils.encode_cell({r:R, c:C})];
-      if(cell && typeof cell.v === "string" && cell.v.includes("http")){
-        cell.l = { Target: cell.v }; // hyperlink
-        cell.s = {
-          font: { color: { rgb: "0000FF" }, underline: true }, // blue underline
-          alignment: { horizontal: "left", vertical: "top" }
-        };
-      }
-    }
-  }
+  // Add worksheet to workbook
+  XLSX.utils.book_append_sheet(wb, ws, filename);
 
-  // Create workbook and export
-  var wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, "Romhack");
+  // Export
   XLSX.writeFile(wb, filename + ".xlsx");
 }
 </script>
